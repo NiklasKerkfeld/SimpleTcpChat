@@ -35,7 +35,7 @@ public class ChatClient {
     public void send(String message) {
         // TODO: Throw IllegalStateException when client is not connected
         try {
-            //TODO: Create a PrintWriter around the input stream of the socket and print the message on it.
+            // TODO: Create a PrintWriter around the output stream of the socket and print the message on it.
             // Don't forget to flush (auto-flush is an option)!
         } catch (IOException e) {
             System.out.println("Could not send message: " + e.getMessage());
