@@ -14,8 +14,8 @@ public class Main {
 
         BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
         while(client.isConnected()) {
-            // TODO: Test for data to send and let client send it. Try to not block for input or you will still
-            //  be waiting while the connection may have already closed
+            // TODO: Test for data to send and let client send it when available. Try to not block for input or you will still
+            //  be waiting while the connection may have already been closed
         }
         System.out.println("Disconnected");
     }

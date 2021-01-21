@@ -8,7 +8,7 @@ public class ChatClient {
 
     private Socket socket = null;
     private ChatListener listener;
-    // TODO: Add member variables for construcotr args
+    // TODO: Add member variables for constructr args
 
     public ChatClient(String hostname, int port, PrintStream outputPrintStream) {
         // TODO: Store arguments in member variables
@@ -20,10 +20,10 @@ public class ChatClient {
         System.out.println("Connected to " + socket.getInetAddress().getHostAddress() + " through port " + socket.getLocalPort());
 
         BufferedReader in;
-        // TODO: Create BufferedReader ontop of InputStreamReader ontop of the output stream of the socket. Abort if that fails.
+        // TODO: Create BufferedReader on top of InputStreamReader on top of the output stream of the socket. Abort if that fails.
 
         // TODO: Create new ChatListener with BufferedReader 'in' and 'outputPrintStream'. Store in member variable 'listener'
-        // TODO: Create and start a new Thread with a ChatListener
+        // TODO: Create and start a new Thread with this ChatListener
     }
 
     public boolean isConnected() {

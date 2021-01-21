@@ -24,9 +24,9 @@ public class ChatListener {
 
     @Override
     public void run() {
-        // TODO: listen continously for incoming messages and print them on to 'output'
+        // TODO: listen continuosly for incoming messages and print them on to 'output'
         // You can use the method readLine() in BufferedReader that blocks for input and returns a whole line that can be printed directly
         // readLine() returns null if the underlying stream has been closed -> connection has been broken
-        //      Use this set 'connected' to false and end the run()-method when the connection has been aborted
+        //      Use this to set 'connected' to false and end the run()-method when the connection has been aborted
     }
 }
