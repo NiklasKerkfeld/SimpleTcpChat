@@ -5,7 +5,8 @@ import java.io.PrintStream;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 
-public class ChatListener implements Runnable {
+// TODO: make Chatlistener implement Runnable
+public class ChatListener {
 
     private final BufferedReader reader;
     private final PrintStream output;
