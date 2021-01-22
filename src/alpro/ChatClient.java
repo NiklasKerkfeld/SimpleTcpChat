@@ -7,18 +7,22 @@ import java.net.Socket;
 public class ChatClient {
 
     private Socket socket = null;
-    private ChatListener listener;
-    // TODO: Add member variables for constructr args (hostname, port, outputPrintStream)
+    private ChatListener listener = null;
+    private final PrintStream outputPrintStream;
+    private final String hostname;
+    private final int port;
 
     public ChatClient(String hostname, int port, PrintStream outputPrintStream) {
-        // TODO: Store arguments in member variables
+        this.hostname = hostname;
+        this.port = port;
+        this.outputPrintStream = outputPrintStream;
     }
 
     public void connect() throws IOException {
         try {
             // TODO: Create new socket with target given in constructor arguments.
         } catch (IOException e) {
-            throw new IOException("Could not connect to " + hostname + ":" + port + " : " + e.getMessage());
+            throw new IOException("Could not connect to " + hostname + ":" + port + " : " + e.getMessage(), e);
         }
 
         outputPrintStream.println("Connected to " + socket.getInetAddress().getHostAddress() + " through port " + socket.getLocalPort());
@@ -43,7 +47,7 @@ public class ChatClient {
     public boolean isConnected() {
         if(socket == null || listener == null)
             return false;
-        return listener.isConnected() && !socket.isClosed() && socket.isConnected();
+        return !socket.isClosed() && socket.isConnected() && listener.isConnected();
     }
 
     public void send(String message) throws IOException{
@@ -52,7 +56,7 @@ public class ChatClient {
             // TODO: Create a PrintWriter around the output stream of the socket and print the message on it.
             // Don't forget to flush (auto-flush is an option)!
         } catch (IOException e) {
-            throw new IOException("Could not send message: " + e.getMessage());
+            throw new IOException("Could not send message: " + e.getMessage(), e);
         }
     }
 

@@ -8,12 +8,14 @@ public class Main {
 
     public static void main(String[] args) {
 
+        ChatClient client = null;
         // TODO: Make a chat client with given server address, port and System.out as output stream
 
         try {
             // TODO: Make client connect to server
         } catch (IOException e) {
             System.err.println(e.getMessage());
+            e.getCause().printStackTrace();
             return;
         }
 
@@ -30,11 +32,12 @@ public class Main {
                             client.send(message);
                         } catch (IOException e) {
                             System.err.println(e.getMessage());
+                            e.getCause().printStackTrace();
                         }
                     }
                 }
             } catch (IOException e) {
-                System.err.println("Could not read input: " + e.getMessage());
+                System.out.println("Could not read input: " + e.getMessage());
             }
         }
         System.out.println("Chat ended");
