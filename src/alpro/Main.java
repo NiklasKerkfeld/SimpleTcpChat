@@ -10,13 +10,33 @@ public class Main {
 
         // TODO: Make a chat client with given server address, port and System.out as output stream
 
-        // TODO: Make client connect to server
+        try {
+            // TODO: Make client connect to server
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            return;
+        }
 
         BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
         while(client.isConnected()) {
-            // TODO: Test for data to send and let client send it when available. Try to not block for input or you will still
-            //  be waiting while the connection may have already been closed
+            try {
+                if(inputReader.ready()) {
+                    String message = inputReader.readLine();
+                    if(message.equals("exit")) {
+                        client.disconnect();
+                    }
+                    else {
+                        try {
+                            client.send(message);
+                        } catch (IOException e) {
+                            System.err.println(e.getMessage());
+                        }
+                    }
+                }
+            } catch (IOException e) {
+                System.err.println("Could not read input: " + e.getMessage());
+            }
         }
-        System.out.println("Disconnected");
+        System.out.println("Chat ended");
     }
 }

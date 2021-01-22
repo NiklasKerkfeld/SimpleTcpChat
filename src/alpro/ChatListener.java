@@ -5,7 +5,7 @@ import java.io.PrintStream;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 
-// TODO: make Chatlistener implement Runnable
+// TODO: make Chatlistener implement interface Runnable
 public class ChatListener {
 
     private final BufferedReader reader;
