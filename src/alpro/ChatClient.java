@@ -28,7 +28,7 @@ public class ChatClient {
         outputPrintStream.println("Connected to " + socket.getInetAddress().getHostAddress() + " through port " + socket.getLocalPort());
 
         BufferedReader in;
-        // TODO: Create BufferedReader on top of InputStreamReader on top of the output stream of the socket. Throw IOException if that fails
+        // TODO: Create BufferedReader on top of InputStreamReader on top of the input stream of the socket. Throw IOException if that fails
 
         // TODO: Create new ChatListener with BufferedReader 'in' and 'outputPrintStream'. Store in member variable 'listener'
         // TODO: Create and start a new Thread with this ChatListener
